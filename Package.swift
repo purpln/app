@@ -6,5 +6,5 @@ let package = Package(
     name: "app",
     products: [.executable(name: "app", targets: ["app"])],
     dependencies: [.package(url: "https://github.com/PureSwift/BluetoothLinux.git", .branch("master"))],
-    targets: [.target(name: "app", dependencies: [.product(name: "BluetoothLinux", package: "BluetoothLinux")])]
+    targets: [.target(name: "app", dependencies: [.product(name: "BluetoothLinux", package: "BluetoothLinux")], swiftSettings: [.unsafeFlags(["-cross-module-optimization"])])]
 )
