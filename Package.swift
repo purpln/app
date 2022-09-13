@@ -1,10 +1,18 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.7
 
 import PackageDescription
 
 let package = Package(
     name: "app",
-    products: [.executable(name: "app", targets: ["app"])],
-    dependencies: [.package(url: "https://github.com/PureSwift/BluetoothLinux.git", .branch("master"))],
-    targets: [.target(name: "app", dependencies: [.product(name: "BluetoothLinux", package: "BluetoothLinux")], swiftSettings: [.unsafeFlags(["-cross-module-optimization"])])]
+    products: [.executable(name: "app", targets: ["Application"])],
+    dependencies: [.package(url: "https://github.com/PureSwift/BluetoothLinux.git", branch: "master")],
+    targets: [
+        .executableTarget(name: "Application", dependencies: [
+            .target(name: "Architecture"),
+            .product(name: "BluetoothLinux", package: "BluetoothLinux")
+        ], swiftSettings: [
+            .unsafeFlags(["-Xfrontend", "-experimental-hermetic-seal-at-link"])
+        ]),
+        .target(name: "Architecture")
+    ], cxxLanguageStandard: .cxx17
 )
