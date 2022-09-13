@@ -11,7 +11,9 @@ let package = Package(
             .target(name: "Architecture"),
             .product(name: "BluetoothLinux", package: "BluetoothLinux")
         ], swiftSettings: [
-            .unsafeFlags(["-Xfrontend", "-experimental-hermetic-seal-at-link"])
+            .unsafeFlags(["-Xfrontend", "-experimental-hermetic-seal-at-link"]),
+            .unsafeFlags(["-Xfrontend", "-driver-print-jobs"]),
+            .unsafeFlags(["-Xfrontend", "-driver-print-actions"])
         ]),
         .target(name: "Architecture")
     ], cxxLanguageStandard: .cxx17
