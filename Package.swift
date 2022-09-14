@@ -10,6 +10,8 @@ let package = Package(
         .executableTarget(name: "Application", dependencies: [
             .target(name: "Architecture"),
             .product(name: "BluetoothLinux", package: "BluetoothLinux")
+        ], swiftSettings: [
+            .define("SWIFTPM_DISABLE_PLUGINS")
         ]),
         .target(name: "Architecture")
     ], cxxLanguageStandard: .cxx17
