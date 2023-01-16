@@ -1,5 +1,5 @@
 public protocol Application {
-    associatedtype Content: Sequence<any Scene>
+    associatedtype Content: Collection<any Scene>
     var scenes: Content { get }
     
     init() async throws

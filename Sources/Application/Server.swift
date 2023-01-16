@@ -16,7 +16,7 @@ public actor Server {
     public func start() async throws {
         while true {
             guard let string = readLine() else { return }
-            try await self.handleReadLine(string)
+            try await self.readLineHandler(string)
         }
     }
 }
