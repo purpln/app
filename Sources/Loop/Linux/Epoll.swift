@@ -7,7 +7,7 @@ public typealias Poller = Epoll
 public typealias Event = epoll_event
 
 extension Event {
-    init(descriptor: Descriptor, type: IOEvent) {
+    init(descriptor: Descriptor, type: IO) {
         let events: UInt32
         switch type {
         case .read: events = EPOLLIN.rawValue
@@ -81,12 +81,12 @@ public struct Epoll: PollerProtocol {
         return events.prefix(upTo: Int(count))
     }
 
-    public mutating func add(socket: Descriptor, event: IOEvent) {
+    public mutating func add(socket: Descriptor, event: IO) {
         var event = Event(descriptor: socket, type: event)
         epoll_ctl(descriptor.rawValue, EPOLL_CTL_ADD, socket.rawValue, &event)
     }
 
-    public mutating func remove(socket: Descriptor, event: IOEvent) {
+    public mutating func remove(socket: Descriptor, event: IO) {
         var event = Event(descriptor: socket, type: event)
         epoll_ctl(descriptor.rawValue, EPOLL_CTL_DEL, socket.rawValue, &event)
     }
