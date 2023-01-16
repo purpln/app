@@ -73,7 +73,7 @@ public struct Epoll: PollerProtocol {
             count = epoll_wait(
                 descriptor.rawValue,
                 &events, Int32(events.count),
-                deadline?.timeoutSinceNow ?? -1)
+                deadline?.timeout ?? -1)
             guard count >= 0 || errno == EINTR else {
                 throw SystemError()
             }
