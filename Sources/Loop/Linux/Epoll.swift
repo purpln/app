@@ -1,7 +1,7 @@
 #if os(Linux)
 
 import Glibc
-//import CEpoll
+import CEpoll
 
 public typealias Poller = Epoll
 public typealias Event = epoll_event
