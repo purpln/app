@@ -3,16 +3,20 @@
 import PackageDescription
 
 let package = Package(
-    name: "app",
+    name: "app", platforms: [.macOS(.v13), .iOS(.v16)],
     products: [.executable(name: "app", targets: ["Application"])],
-    dependencies: [.package(url: "https://github.com/PureSwift/BluetoothLinux.git", branch: "master")],
+    dependencies: [
+        
+    ],
     targets: [
         .executableTarget(name: "Application", dependencies: [
-            .target(name: "Architecture"),
-            .product(name: "BluetoothLinux", package: "BluetoothLinux")
-        ], swiftSettings: [
-            .define("SWIFTPM_DISABLE_PLUGINS")
+            .target(name: "Architecture")
         ]),
-        .target(name: "Architecture")
-    ], cxxLanguageStandard: .cxx17
+        .target(name: "Architecture", dependencies: [
+            .target(name: "Loop")
+        ]),
+        .target(name: "Loop"),
+        .target(name: "File"),
+        .target(name: "JSON"),
+    ]
 )

@@ -1,0 +1,10 @@
+{
+    "int": 0,
+    "double": 0.0,
+    "null": null,
+    "bool": true,
+    "string": "string",
+    "array": ["item"],
+    "objects": [{"string": "string"}],
+    "object": {"string": "string"}
+}
