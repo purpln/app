@@ -1,6 +1,6 @@
-#if os(macOS) || os(iOS)
+#if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
 import Darwin.C
-#elseif os(Linux)
+#elseif os(Linux) || os(Android) || os(FreeBSD)
 import Glibc
 #endif
 

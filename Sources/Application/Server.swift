@@ -1,22 +1,20 @@
 public actor Server {
     @discardableResult
-    public func onReadLine(_ handler: @escaping ReadLineHandler) async -> Self {
-        self.readLineHandler = handler
+    public func readLine(handler: @escaping Handler) async -> Self {
+        self.handler = handler
         return self
     }
     
-    public typealias ReadLineHandler = (String) async throws -> Void
+    public typealias Handler = (String) async throws -> Void
     
-    lazy var readLineHandler: ReadLineHandler = handleReadLine
-    
-    func handleReadLine(_ string: String) async throws { }
+    lazy var handler: Handler = { _ in }
     
     public init() { }
     
     public func start() async throws {
         while true {
-            guard let string = readLine() else { return }
-            try await self.readLineHandler(string)
+            guard let string = Swift.readLine() else { return }
+            try await self.handler(string)
         }
     }
 }

@@ -1,4 +1,0 @@
-module CEpoll [system] {
-    header "include.h"
-    export *
-}

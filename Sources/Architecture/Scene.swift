@@ -1,3 +1,4 @@
 public protocol Scene {
-    //func execute() async throws
+    init() async throws
+    func execute() async throws
 }
