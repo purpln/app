@@ -1,10 +1,5 @@
+import Platform
 import Loop
-
-#if os(macOS)
-import Darwin.C
-#elseif os(Linux)
-import Glibc
-#endif
 
 private var socketPair: (Descriptor, Descriptor) {
     var sv: (Descriptor, Descriptor) = (.zero, .zero)

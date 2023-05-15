@@ -1,0 +1,50 @@
+{
+  "pins" : [
+    {
+      "identity" : "log",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/purpln/log.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "fdcb52d54efe569b775ca2fa0e3390308a2da2c8"
+      }
+    },
+    {
+      "identity" : "loop",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/purpln/loop.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "39f4525d5a509bea7c0714b1835c49b23350c391"
+      }
+    },
+    {
+      "identity" : "network",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/purpln/network.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "908ba0a371d88b911febceba6f351af47d4544d9"
+      }
+    },
+    {
+      "identity" : "platform",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/purpln/platform.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "2b04adf441915d9f1cc1f130dbf4ff65cffe4062"
+      }
+    },
+    {
+      "identity" : "stream",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/purpln/stream.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "f007c5f93d7d2f457e5606620db3697c1847dfd8"
+      }
+    }
+  ],
+  "version" : 2
+}

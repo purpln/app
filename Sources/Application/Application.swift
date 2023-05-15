@@ -4,7 +4,8 @@ import Internal
 @main
 struct App: Application {
     var scenes: [any Scene] { [
-        View()
+        Server(),
+        Client(),
     ] }
 }
 
